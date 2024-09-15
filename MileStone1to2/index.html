@@ -93,7 +93,22 @@
        
       </div>
     </div>
-  <script src="script.js"></script>
+  <script>
+    let skilldat = document.getElementById("dat3");
+    let skillbutton = document.getElementById("btn");
+    
+    btn.addEventListener("click" ,()=>
+        {
+        if (skilldat.style.display === "none") 
+        {
+            skilldat.style.display = "block";  
+        } 
+        else 
+        {
+            skilldat.style.display = "none"; 
+        }
+    });
+  </script>
     
   </body>
 </html>
