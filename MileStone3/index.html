@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dynamic resume</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./img/logo.jpg" />
+  </head>
+  <body>
+ <div id="pages">
+  <div id="page1" >
+      <h6>GIVE YOU ARE INFORMATION</h6>
+      <div class="inline-row" id="inputNameDiv">
+        <h5>Name:</h5>
+      <input type="text" name="Name" id="inputName" placeholder="Enter Your Name" required>
+      </div>
+      <form>
+      <fieldset>
+          <legend>Who You Are</legend>
+          <div class="inline-row">
+            <h5>Passion:</h5>
+            <input id="Passion" type="text" placeholder="Enter Your Passion " required>
+          </div>
+          
+          
+          
+          <h5>Languages:</h5>
+
+          <input class="checkbox" type="checkbox" id="Urdu" name="Urdu" >
+          <label for="Urdu">Urdu</label>
+          <input class="checkbox" type="checkbox" id="English" name="English" >
+          <label for="English">English</label>
+          <input class="checkbox" type="checkbox" id="Arbi" name="Arbi">
+          <label for="Arbi">Arbi</label>
+          <input class="checkbox" type="checkbox" id="German" name="German" >
+          <label for="German">German</label>
+          <input class="checkbox" type="checkbox" id="Franch" name="Franch" >
+          <label for="Franch">Franch</label>
+          <input class="checkbox" type="checkbox" id="Chinese" name="Chinese" >
+          <label for="Chinese">Chinese</label>
+          
+          <div class="inline-row">
+<h5>Location:</h5>
+          <input type="text" id="Location" placeholder="Enter Your House Location" required>
+          </div>
+          <div class="inline-row">
+ <h5>Phone:</h5>
+          <input type="number" id="Phone" placeholder="Enter Your Phone Number" required>
+          </div>
+          <div class="inline-row">
+ <h5>Email:</h5>
+          <input type="email" id="Email" placeholder="Enter Your Email" required>
+          </div>
+          <div class="inline-row">
+ <h5>Linkdin:</h5>
+          <input type="url" id="Linkdin" placeholder="Enter Your Linkdin Profile URl" required>
+          </div>
+          <div class="inline-row">
+ 
+          <h5>Github:</h5>
+          <input type="url" id="Github" placeholder="Enter Your Github Profile URl" required>
+          </div>
+        
+      </fieldset>
+      <fieldset id="field2">
+          <legend>Career</legend>
+          <div class="inline-row">
+             <h5>Education:</h5>
+          <textarea name="education" id="Education" placeholder="enter your collification" rows="3" required></textarea>
+</div>
+<div class="inline-row">
+                   <h5>Expirience:</h5>
+          <textarea name="Expirience" id="Expirience" placeholder="enter your practical life Expirience " rows="3" required></textarea>
+</div>     <div class="inline-row">   
+   <h5>Skills:</h5>
+          <textarea  name="Skills" id="Skills" placeholder="which types of skills you have" rows="3" required></textarea>
+</div> 
+
+<button id="submitbtn" type="submit">CLICK TO MAKE RESUME</button>
+
+      </fieldset>
+  
+    </form>
+  </div>
+  <div id="page2">
+    <div id="header">  
+      <h1>muhammad anus ahmed</h1>
+      <h2>made for resume</h2>
+    </div>
+    <div id="resumeflexer">  
+      <div id="slip"> 
+          <div id="contact">
+            <h3>CONTACT</h3></div>
+            <div class="contactdata">
+              <img class="contactimg" src="./img/location.png" alt="profile" />
+              <h4 id="resumeLocation"></h4>
+            </div>
+          <div class="contactdata">
+            <img class="contactimg" src="./img/phone.png" alt="phone" />
+            <h4 id="resumeNumber"></h4>
+          </div>
+          <div class="contactdata">
+            <img class="contactimg" src="./img/email_icon.png" alt="email" />
+            <h4 id="resumeEmail"></h4>
+          </div>
+          <div class="contactdata">
+            <img class="contactimg" src="./img/linkdin.png" alt="linkdin" />
+            <h4 id="resumeLinkedin"></h4>
+          </div>
+          <div class="contactdata">
+            <img class="contactimg" src="./img/github.png" alt="github" />
+            <h4 id="resumeGithub" ></h4>
+        </div>
+       
+        <div id="sec3">
+            <h3 id="lang">LANGUAGE</h3>
+            <ul id="resumeLang">    
+            </ul>
+        </div>
+      </div>
+      <div>
+        <div class="data">
+            <h3>EDUCATION</h3>
+            <div id="resumeEducation">
+            </div>
+          </div>
+        <div class="data">
+            <h3>EXPIRIENCE</h3>
+            <div id="resumeExpirience">
+            </div>
+        </div>
+        <div class="data">
+            <h3>SKILLS</h3>
+            <div id="resumeSkill">               
+            </div>
+              
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+   const Button = document.getElementById('submitbtn');
+   
+  Button.addEventListener("click", () => {
+  
+    document.querySelector("body").style.overflowY = "scroll";
+    
+
+    
+    // Location
+    document.getElementById("resumeLocation").innerText =(document.getElementById("Location")).value;
+    // Phone
+    document.getElementById("resumeNumber").innerText = (document.getElementById("Phone")).value;
+    // Email
+    document.getElementById("resumeEmail").innerText = (document.getElementById("Email")).value;
+    // linkedin
+    document.getElementById("resumeLinkedin").innerText = (document.getElementById("Linkdin")).value;
+    // github
+    document.getElementById("resumeGithub").innerText = (document.getElementById("Github")).value;
+    // Name
+    document.querySelector("h1").innerText = (document.getElementById("inputName")).value;
+    // passion
+    document.querySelector("h2").innerText = (document.getElementById("Passion")).value;
+
+    // education
+    function educationFunc(edu) {
+    const pre = document.createElement("pre")
+    pre.appendChild(document.createTextNode(edu))
+    document.querySelector("#resumeEducation").appendChild(pre)
+    pre.style.paddingLeft = "10%";
+    pre.style.fontStyle = "bold";
+    pre.style.fontSize = "120%";
+  }
+  educationFunc(document.getElementById("Education").value);
+
+
+  // expirience
+  function expirienceFunc(expi) { 
+    const pre = document.createElement("pre")
+    pre.appendChild(document.createTextNode(expi))
+    document.querySelector("#resumeExpirience").appendChild(pre)
+    pre.style.paddingLeft = "10%";
+    pre.style.fontStyle = "bold";
+    pre.style.fontSize = "120%";
+  }
+  expirienceFunc(document.getElementById("Expirience").value);
+
+
+  // skills
+  
+  function skillfunc(ski) { 
+    const pre = document.createElement("pre")
+    pre.appendChild(document.createTextNode(ski))
+    document.querySelector("#resumeSkill").appendChild(pre)
+    pre.style.paddingLeft = "10%";
+    pre.style.fontStyle = "bold";
+    pre.style.fontSize = "120%";
+  }
+  skillfunc(document.getElementById("Skills").value);
+  
+  
+  // languages
+  function classCombineadder(lang) {
+    const li = document.createElement("li")
+    li.appendChild(document.createTextNode(lang))
+    document.querySelector("#resumeLang").appendChild(li)
+  }
+  let Urdu = document.getElementById("Urdu");
+  if (Urdu.checked){classCombineadder("Urdu");}
+  let English = document.getElementById("English");
+  if (English.checked){classCombineadder("English");}
+  let German = document.getElementById("German");
+  if (German.checked){classCombineadder("German");}
+  let Franch = document.getElementById("Franch");
+  if (Franch.checked){classCombineadder("Franch");}
+  let Chinese = document.getElementById("Chinese");
+  if (Chinese.checked){classCombineadder("Chinese");}
+  let Arbi = document.getElementById("Arbi");
+  if (Arbi.checked){classCombineadder("Arbi");}
+
+  Button.disabled = true;
+  
+})
+</script>
+    
+  </body>
+</html>
